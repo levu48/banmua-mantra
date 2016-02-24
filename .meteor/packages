@@ -24,3 +24,8 @@ reactive-dict
 audit-argument-checks
 check
 random
+universe:i18n
+react-meteor-data
+accounts-ui
+accounts-password
+react
