@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "i18n": "^0.7.0",
     "mantra-core": "^1.2.0",
     "material-ui": "^0.14.4",
     "react": "^0.14.6",

@@ -20,6 +20,7 @@ const { RaisedButton, FlatButton, Dialog,
 
 import {SvgIcon} from 'material-ui/lib';
 //const {SvgIcons} = MUI.Libs;
+import NavigationArrowDropDownCircle from 'material-ui/lib/svg-icons/navigation/arrow-drop-down-circle';
 
 const ThemeManager = Styles.ThemeManager;
 
@@ -165,7 +166,41 @@ const Main = React.createClass({
                         <a className="appTitle" href="/">BánMua<span style={{color:"#ccc"}}>.US</span></a>
                         <span style={{fontWeight: "lighter", fontStyle: "italic", fontSize: "14px"}}>&nbsp; &nbsp; &nbsp; <Tran>{'motto'}</Tran></span></span>}
                     showMenuIconButton={true} 
-                    onLeftIconButtonTouchTap={this.toggleLeftNav} />
+                    onLeftIconButtonTouchTap={this.toggleLeftNav} 
+                    iconElementRight={
+                       Meteor.userId() ? 
+                            <IconMenu iconButtonElement={<IconButton><NavigationArrowDropDownCircle/></IconButton>}
+                                        value={this.state.rightValue}  onChange={this.handleChangeRightMenu}>
+                                <MenuItem value={1} onTouchTap={() => FlowRouter.go('/account')} ><Tran>myAccount</Tran></MenuItem>
+                                <MenuItem value={3} onTouchTap={this.signOut}><Tran>printSavedList</Tran></MenuItem>
+                                <MenuItem value={2} onTouchTap={() => FlowRouter.go('/post')} ><Tran>post</Tran></MenuItem>
+                                <MenuItem value={2} onTouchTap={() => FlowRouter.go('/directory/add')} ><Tran>addDirectoryEntry</Tran></MenuItem>
+                                <MenuItem value={3} onTouchTap={this.signOut}><Tran>signOut</Tran></MenuItem>
+                                <Divider />
+                                <MenuItem insetChildren={true} checked={this.data.isEnglish} onClick={this.setEnglish}>English</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isVietnamese} onClick={this.setVietnamese}>Tiếng Việt</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isSpanish} onClick={this.setSpanish}>Español</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isKorean} onClick={this.setKorean}>한국어</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isChinese} onClick={this.setChinese}>中文</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isJapanese} onClick={this.setJapanese}>日本語</MenuItem>
+                            </IconMenu>
+                            : <IconMenu iconButtonElement={<IconButton><NavigationArrowDropDownCircle/></IconButton>}
+                                        value={this.state.rightValue}  onChange={this.handleChangeRightMenu}>
+                                <MenuItem value={1} onTouchTap={() => FlowRouter.go('/login')} >
+                                        <Tran>login</Tran></MenuItem>
+                                <Divider />
+                                <MenuItem insetChildren={true} checked={this.data.isEnglish} onClick={this.setEnglish}>English</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isVietnamese} onClick={this.setVietnamese}>Tiếng Việt</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isSpanish} onClick={this.setSpanish}>Español</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isKorean} onClick={this.setKorean}>한국어</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isChinese} onClick={this.setChinese}>中文</MenuItem>
+                                <MenuItem insetChildren={true} checked={this.data.isJapanese} onClick={this.setJapanese}>日本語</MenuItem>
+                            </IconMenu>
+                    }          
+                />
+                <div id="content" className="spacer" style={styles}>
+                    { this.props.content }
+                </div>
             </AppCanvas>
         );
     }

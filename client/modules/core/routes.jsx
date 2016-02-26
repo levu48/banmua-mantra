@@ -17,4 +17,11 @@ export default function(injectDeps, {FlowRouter}) {
             mount(MainCtx, { content: () => null});
         }
     });
+    
+    FlowRouter.route("/login", {
+        name: 'login',
+        action(params) {
+            mount(MainCtx, { content: <Accounts.ui.LoginFormSet redirect={() => FlowRouter.go('/')} /> });
+        }
+    });
 }

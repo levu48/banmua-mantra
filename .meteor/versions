@@ -64,6 +64,8 @@ npm-mongo@1.4.40-modules.8
 observe-sequence@1.0.8-modules.8
 ordered-dict@1.0.4
 promise@0.5.2-modules.8
+qnub:accounts-react-material-ui@0.13.4_1
+qnub:t9n@0.0.2
 random@1.0.6-modules.8
 rate-limit@1.0.1-modules.8
 react@0.14.3_1
