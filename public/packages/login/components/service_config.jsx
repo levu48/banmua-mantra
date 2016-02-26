@@ -1,7 +1,7 @@
 import React from 'react';
 import MUI from 'material-ui';
 
-Accounts.ui.ServiceConfig = React.createClass({
+const ServiceConfig = React.createClass({
   propTypes: {
     service: React.PropTypes.object.isRequired,
     template: React.PropTypes.element,
@@ -165,3 +165,5 @@ Accounts.ui.ServiceConfig = React.createClass({
     </div>);
   }
 });
+
+export default ServiceConfig;

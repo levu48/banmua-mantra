@@ -24,7 +24,7 @@ import NavigationArrowDropDownCircle from 'material-ui/lib/svg-icons/navigation/
 
 const ThemeManager = Styles.ThemeManager;
 
-const Main = React.createClass({
+const AppHeader = React.createClass({
     childContextTypes: {
         muiTheme: React.PropTypes.object
     },
@@ -160,7 +160,7 @@ const Main = React.createClass({
         const styles = {padding: '70px 0 0 0', textAlign: 'center'};
         
         return (
-            <AppCanvas id="app-root" style={{ margin: 0, padding: 0}}>
+            <div>
                 <AppLeftNav ref="leftNav" />
                 <AppBar title={<span className="appTitle" onTouchTap={this.gotoHome}>
                         <a className="appTitle" href="/">BánMua<span style={{color:"#ccc"}}>.US</span></a>
@@ -198,13 +198,10 @@ const Main = React.createClass({
                             </IconMenu>
                     }          
                 />
-                <div id="content" className="spacer" style={styles}>
-                    { content }
-                </div>
-            </AppCanvas>
+            </div>
         );
     }
 });
 
-export default Main;
+export default AppHeader;
 

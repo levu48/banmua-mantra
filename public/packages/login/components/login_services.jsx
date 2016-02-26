@@ -1,6 +1,6 @@
 import React from 'react';
 
-Accounts.ui.LoginServices = React.createClass({
+const LoginServices = React.createClass({
   mixins: [ReactMeteorData],
 
   getMeteorData(){
@@ -40,3 +40,4 @@ Accounts.ui.LoginServices = React.createClass({
   }
 });
 
+export default LoginServices;

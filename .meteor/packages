@@ -29,5 +29,5 @@ accounts-ui
 accounts-password
 react
 universe:i18n
-qnub:accounts-react-material-ui
 http
+qnub:t9n

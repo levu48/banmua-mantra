@@ -1,7 +1,7 @@
 import React from 'react';
 import MUI from 'material-ui';
 
-Accounts.ui.LoginService = React.createClass({
+const LoginService = React.createClass({
   mixins: [ReactMeteorData],
 
   propTypes: {
@@ -108,3 +108,5 @@ Accounts.ui.LoginService = React.createClass({
   }
 });
 
+
+export default LoginService;

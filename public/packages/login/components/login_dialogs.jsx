@@ -1,6 +1,6 @@
 import React from 'react';
 
-Accounts.ui.Dialogs = React.createClass({
+const Dialogs = React.createClass({
     mixins: [ReactMeteorData],
 
     getMeteorData(){
@@ -124,3 +124,6 @@ Accounts.ui.Dialogs = React.createClass({
         </div>);
     }
 });
+
+
+export default Dialogs;

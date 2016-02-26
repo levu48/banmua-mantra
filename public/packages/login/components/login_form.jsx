@@ -7,9 +7,29 @@ const LOGIN_FORM_STATES = {
     PASSWORD_CHANGE: Symbol('PASSWORD_CHANGE'),
     PASSWORD_RESET: Symbol('PASSWORD_RESET')
 };
+    
+const LoginForm = React.createClass({
+  mixins: [ReactMeteorData],
 
+  getMeteorData(){
+    return {
+      user: Meteor.user()
+    };
+  },
 
-const _loginForm = React.createClass({
+  render(){
+    if (!Package['accounts-password']){
+      return false;
+    }
+
+    return(<div
+      className="accounts-ui__form-wrapper">
+      <Accounts.ui._loginForm user={this.data.user} {...this.props}/>
+    </div>);
+  }
+});
+
+Accounts.ui._loginForm = React.createClass({
   propTypes: {
     user: React.PropTypes.object
   },
@@ -496,29 +516,4 @@ const _loginForm = React.createClass({
   }
 });
 
-    
-
-
-const LoginForm = React.createClass({
-  mixins: [ReactMeteorData],
-
-  getMeteorData(){
-    return {
-      user: Meteor.user()
-    };
-  },
-
-  render(){
-    if (!Package['accounts-password']){
-      return false;
-    }
-
-    return(<div
-      className="accounts-ui__form-wrapper">
-      <Accounts.ui._loginForm user={this.data.user} {...this.props}/>
-    </div>);
-  }
-});
-
-export default {_loginForm, LoginForm};
-
+export default LoginForm;

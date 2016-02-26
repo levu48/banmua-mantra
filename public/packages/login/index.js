@@ -1,18 +1,12 @@
 import setupLoginHelpers from './helpers';
 import setupLoginSession from './login_session';
-
-/*
-import './components/display_name.jsx';
-import './components/service_config.jsx';
-import './components/login_service.jsx';
-import './components/login_services.jsx';
-import './components/login_form.jsx';
-import './components/login_formset.jsx';
-import './components/login_dialogs.jsx';
-*/
-
-import {_loginForm, LoginForm} from './components/login_form.jsx';
+import DisplayName from './components/display_name.jsx';
+import ServiceConfig from './components/service_config.jsx';
+import LoginService from './components/login_service.jsx';
+import LoginServices from './components/login_services.jsx';
+import LoginForm from './components/login_form.jsx';
 import LoginFormSet from './components/login_formset.jsx';
+import Dialogs from './components/login_dialogs.jsx';
 
 const setupLogin = function () {
     console.log("login module index.js");
@@ -92,13 +86,17 @@ const setupLogin = function () {
     };
 } 
 
-
-
+/*
 setupLoginHelpers();
 setupLogin();
 setupLoginSession();
 
-Accounts.ui._loginForm = _loginForm;
+Accounts.ui.DisplayName = DisplayName;
+Accounts.ui.ServiceConfig = ServiceConfig;
+Accounts.ui.LoginService = LoginService;
+Accounts.ui.LoginServices = LoginServices;
 Accounts.ui.LoginForm = LoginForm;
 Accounts.ui.LoginFormSet = LoginFormSet;
+Accounts.ui.Dialogs = Dialogs;
+*/
 

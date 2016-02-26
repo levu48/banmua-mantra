@@ -1,6 +1,6 @@
 import React from 'react';
 
-Accounts.ui.DisplayName = React.createClass({
+const DisplayName = React.createClass({
     mixins: [ReactMeteorData],
 
     getMeteorData(){
@@ -35,3 +35,4 @@ Accounts.ui.DisplayName = React.createClass({
     }
 });
 
+export default DisplayName;

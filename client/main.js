@@ -11,15 +11,16 @@ import loginModule from './modules/login';
 
 
 
-const context = initContext();
-const app = createApp(context);
+    const context = initContext();
+    const app = createApp(context);
 
-app.loadModule(loginModule);
-app.loadModule(coreModule);
+    app.loadModule(loginModule);
+    app.loadModule(coreModule);
 
-app.init();
+    app.init();
 
 
 
-console.log('client main.js starts');
-console.log(context.Collections);
+    console.log('client main.js starts');
+    console.log("Accounts.ui.LoginFormSet ", Accounts.ui.LoginFormSet);    
+

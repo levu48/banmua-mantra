@@ -1,6 +1,4 @@
 import React from 'react';
-import LoginServices from './login_services.jsx';
-import LoginForm from './login_form.jsx';
 
 const LoginFormSet = React.createClass({
   render(){
@@ -10,8 +8,8 @@ const LoginFormSet = React.createClass({
       options.redirect = this.props.redirect;
     }
 
-    const services = getLoginServices().length && !Meteor.user() ? <LoginServices {...options}/> : null;
-    const form = Package['accounts-password'] ? <LoginForm {...options}/> : null;
+    const services = getLoginServices().length && !Meteor.user() ? <Accounts.ui.LoginServices {...options}/> : null;
+    const form = Package['accounts-password'] ? <Accounts.ui.LoginForm {...options}/> : null;
 
     return(<div
       className="accounts-ui__formset">
@@ -21,7 +19,5 @@ const LoginFormSet = React.createClass({
     </div>);
   }
 });
-
-console.log("LoginFormSet ** ", LoginFormSet);
 
 export default LoginFormSet;
